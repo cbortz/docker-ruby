@@ -1,6 +1,7 @@
 # ![](https://gravatar.com/avatar/11d3bc4c3163e3d238d558d5c9d98efe?s=64) aptible/ruby
 
 [![Docker Repository on Quay.io](https://quay.io/repository/aptible/ruby/status)](https://quay.io/repository/aptible/ruby)
+[![Build Status](https://travis-ci.org/aptible/docker-ruby.svg?branch=master)](https://travis-ci.org/aptible/docker-ruby)
 
 The Ruby programming language, on Docker.
 
@@ -11,11 +12,21 @@ The Ruby programming language, on Docker.
 
 ## Available Tags
 
-* `latest`: Currently Ruby 2.2.2
-* `ruby-1.9.3`: Ruby 1.9.3-p547
-* `ruby-2.0.0`: Ruby 2.0.0-p576
-* `ruby-2.1`: Ruby 2.1.5
-* `ruby-2.2`: Ruby 2.2.2
+* `latest`: Currently Ruby 2.3.0
+* `1.9.3` (aliased as `ruby-1.9.3`): Ruby 1.9.3-p547
+* `2.0.0` (aliased as `ruby-2.0.0`): Ruby 2.0.0-p648
+* `2.1`   (aliased as `ruby-2.1`):   Ruby 2.1.8
+* `2.2`   (aliased as `ruby-2.2`):   Ruby 2.2.4
+* `2.3`   (aliased as `ruby-2.3`):   Ruby 2.3.0
+
+Those images are based on Ubuntu. You can use the Debian variants (which are slightly lighther)
+using the following tags:
+
+* `1.9.3-debian` (aliased as `ruby-1.9.3-debian`)
+* `2.0.0-debian` (aliased as `ruby-2.0.0-debian`)
+* `2.1-debian`   (aliased as `ruby-2.1-debian`)
+* `2.2-debian`   (aliased as `ruby-2.2-debian`)
+* `2.3-debian`   (aliased as `ruby-2.3-debian`)
 
 ## Tests
 
