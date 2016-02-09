@@ -1,0 +1,36 @@
+language: generic
+sudo: true
+
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_CONFIG=./.docker
+  matrix:
+    - TAG=1.9.3
+    - TAG=2.0.0
+    - TAG=2.1
+    - TAG=2.2
+    - TAG=2.3
+    - TAG=1.9.3-debian
+    - TAG=2.0.0-debian
+    - TAG=2.1-debian
+    - TAG=2.2-debian
+    - TAG=2.3-debian
+
+script:
+  - make build
+  - make test
+
+
+before_deploy:
+  - openssl aes-256-cbc -K "$DOCKER_CONF_key" -iv "$DOCKER_CONF_iv" -in .docker/config.json.enc -out .docker/config.json -d
+
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: make push
+  on:
+    branch: master
