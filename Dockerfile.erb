@@ -3,9 +3,12 @@ FROM quay.io/<%= ENV.fetch('FROM') %>
 ENV RUBY_VERSION <%= ENV.fetch('RUBY_VERSION') %>
 ENV RUBY_SHA1SUM <%= ENV.fetch('RUBY_SHA1SUM') %>
 
-RUN apt-get update \
+RUN BUILD_DIR="/tmp/ruby-build" \
+ && apt-get update \
  && apt-get -y install wget build-essential zlib1g-dev libssl-dev \
-    libreadline6-dev libyaml-dev && cd /tmp \
+    libreadline6-dev libyaml-dev \
+ && mkdir -p "$BUILD_DIR" \
+ && cd "$BUILD_DIR" \
  && wget -q "http://cache.ruby-lang.org/pub/ruby/ruby-${RUBY_VERSION}.tar.gz" \
  && echo "${RUBY_SHA1SUM}  ruby-${RUBY_VERSION}.tar.gz" | sha1sum -c - \
  && tar xzf "ruby-${RUBY_VERSION}.tar.gz" \
@@ -13,8 +16,9 @@ RUN apt-get update \
  && ./configure --enable-shared --prefix=/usr \
  && make \
  && make install \
- && cd .. \
- && rm -rf "ruby-${RUBY_VERSION}"{,.tar.gz}
+ && cd / \
+ && rm -r "$BUILD_DIR"
+
 RUN gem install bundler
 
 ADD test /tmp/test
