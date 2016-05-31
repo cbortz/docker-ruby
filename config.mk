@@ -16,7 +16,8 @@ PUSH_TAGS = $(TAG) ruby-$(TAG)
 # http://stackoverflow.com/questions/2741708/makefile-contains-string
 
 ifneq (,$(findstring -debian,$(TAG)))
-export FROM ?= aptible/debian
+# TODO - Newer Debian
+export FROM ?= aptible/debian:wheezy
 else
 # TODO - Newer Ubuntu?
 export FROM ?= aptible/ubuntu:12.04
