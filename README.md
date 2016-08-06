@@ -15,12 +15,11 @@ The Ruby programming language, on Docker.
 * `latest`: Currently Ruby 2.3.0
 * `1.9.3` (aliased as `ruby-1.9.3`): Ruby 1.9.3-p547
 * `2.0.0` (aliased as `ruby-2.0.0`): Ruby 2.0.0-p648
-* `2.1`   (aliased as `ruby-2.1`):   Ruby 2.1.8
-* `2.2`   (aliased as `ruby-2.2`):   Ruby 2.2.4
-* `2.3`   (aliased as `ruby-2.3`):   Ruby 2.3.0
+* `2.1`   (aliased as `ruby-2.1`):   Ruby 2.1.10
+* `2.2`   (aliased as `ruby-2.2`):   Ruby 2.2.5
+* `2.3`   (aliased as `ruby-2.3`):   Ruby 2.3.1
 
-Those images are based on Ubuntu. You can use the Debian variants (which are slightly lighther)
-using the following tags:
+Those images are based on Ubuntu. You can use the Debian variants (which are slightly lighter) using the following tags:
 
 * `1.9.3-debian` (aliased as `ruby-1.9.3-debian`)
 * `2.0.0-debian` (aliased as `ruby-2.0.0-debian`)
@@ -44,6 +43,6 @@ To push the Docker image to Quay, run the following command:
 
 MIT License, see [LICENSE](LICENSE.md) for details.
 
-Copyright (c) 2014 [Aptible](https://www.aptible.com) and contributors.
+Copyright (c) 2016 [Aptible](https://www.aptible.com) and contributors.
 
 [<img src="https://s.gravatar.com/avatar/f7790b867ae619ae0496460aa28c5861?s=60" style="border-radius: 50%;" alt="@fancyremarker" />](https://github.com/fancyremarker)
