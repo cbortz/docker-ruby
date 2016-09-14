@@ -6,16 +6,29 @@ services:
 
 env:
   matrix:
-    - TAG=1.9.3
-    - TAG=2.0.0
-    - TAG=2.1
-    - TAG=2.2
-    - TAG=2.3
-    - TAG=1.9.3-debian
-    - TAG=2.0.0-debian
-    - TAG=2.1-debian
-    - TAG=2.2-debian
-    - TAG=2.3-debian
+    - RUBY_TAG=1.9.3 FROM_OS=ubuntu FROM_TAG=12.04
+    - RUBY_TAG=2.0.0 FROM_OS=ubuntu FROM_TAG=12.04
+    - RUBY_TAG=2.1 FROM_OS=ubuntu FROM_TAG=12.04
+    - RUBY_TAG=2.2 FROM_OS=ubuntu FROM_TAG=12.04
+    - RUBY_TAG=2.3 FROM_OS=ubuntu FROM_TAG=12.04
+
+    - RUBY_TAG=1.9.3 FROM_OS=ubuntu FROM_TAG=16.04
+    - RUBY_TAG=2.0.0 FROM_OS=ubuntu FROM_TAG=16.04
+    - RUBY_TAG=2.1 FROM_OS=ubuntu FROM_TAG=16.04
+    - RUBY_TAG=2.2 FROM_OS=ubuntu FROM_TAG=16.04
+    - RUBY_TAG=2.3 FROM_OS=ubuntu FROM_TAG=16.04
+
+    - RUBY_TAG=1.9.3 FROM_OS=debian FROM_TAG=wheezy
+    - RUBY_TAG=2.0.0 FROM_OS=debian FROM_TAG=wheezy
+    - RUBY_TAG=2.1 FROM_OS=debian FROM_TAG=wheezy
+    - RUBY_TAG=2.2 FROM_OS=debian FROM_TAG=wheezy
+    - RUBY_TAG=2.3 FROM_OS=debian FROM_TAG=wheezy
+
+    - RUBY_TAG=1.9.3 FROM_OS=debian FROM_TAG=jessie
+    - RUBY_TAG=2.0.0 FROM_OS=debian FROM_TAG=jessie
+    - RUBY_TAG=2.1 FROM_OS=debian FROM_TAG=jessie
+    - RUBY_TAG=2.2 FROM_OS=debian FROM_TAG=jessie
+    - RUBY_TAG=2.3 FROM_OS=debian FROM_TAG=jessie
 
 script:
   - make build

@@ -60,6 +60,13 @@ endif
 PUSH_REGISTRIES ?= $(REGISTRY)
 
 
+# Log what we're building
+
+$(info Building   - $(TAG))
+$(info Aliases    - $(PUSH_TAGS))
+$(info Registries - $(PUSH_REGISTRIES))
+
+
 # Export what we're building for e.g. test scripts to use. Exporting
 # other variables is the responsibility of config.mk and $(TAG)/config.mk.
 
