@@ -1,24 +1,28 @@
 REGISTRY = quay.io
 REPOSITORY = aptible/ruby
 
+export TAG = $(RUBY_TAG)-$(FROM_OS)-$(FROM_TAG)
+export FROM = aptible/$(FROM_OS):$(FROM_TAG)
 
-# For compatibility with the old naming convention of ruby-...,
-# we'll push the image under both its "real" tag name, and a version
-# prefixed with "ruby-".
-
-PUSH_REGISTRIES = $(REGISTRY) docker.io
+# Now, we have to figure out aliases.
 PUSH_TAGS = $(TAG) ruby-$(TAG)
 
-
-# We support Ubuntu and Debian for our Ruby images.
-# If the  tag ends with -debian, then build from Debian,
-# otherwise, use Ubuntu.
-# http://stackoverflow.com/questions/2741708/makefile-contains-string
-
-ifneq (,$(findstring -debian,$(TAG)))
-# TODO - Newer Debian
-export FROM ?= aptible/debian:wheezy
-else
-# TODO - Newer Ubuntu?
-export FROM ?= aptible/ubuntu:12.04
+ifeq "$(FROM_OS):$(FROM_TAG)" "ubuntu:12.04"
+# COMPATIBILITY: Ubuntu 12.04 gets the "non-OS" tags, and the legacy ruby- tag.
+PUSH_TAGS = $(TAG) $(RUBY_TAG) ruby-$(RUBY_TAG)
 endif
+
+ifeq "$(FROM_OS):$(FROM_TAG)" "ubuntu:16.04"
+# Ubuntu 16.04 gets the default Ubuntu tag.
+PUSH_TAGS = $(TAG) $(RUBY_TAG)-ubuntu
+endif
+
+ifeq "$(FROM_OS):$(FROM_TAG)" "debian:wheezy"
+# COMPATIBILITY: Wheezy gets the default Debian tag.
+PUSH_TAGS = $(TAG) $(RUBY_TAG)-debian ruby-$(RUBY_TAG)-debian
+endif
+
+PUSH_REGISTRIES = $(REGISTRY) docker.io
+
+# And now, we source $(RUBY_TAG)/config.mk to get the shasum.
+-include $(RUBY_TAG)/config.mk
