@@ -8,13 +8,13 @@ export FROM = aptible/$(FROM_OS):$(FROM_TAG)
 PUSH_TAGS = $(TAG) ruby-$(TAG)
 
 ifeq "$(FROM_OS):$(FROM_TAG)" "ubuntu:12.04"
-# COMPATIBILITY: Ubuntu 12.04 gets the "non-OS" tags, and the legacy ruby- tag.
-PUSH_TAGS = $(TAG) $(RUBY_TAG) ruby-$(RUBY_TAG)
+PUSH_TAGS = $(TAG)
 endif
 
 ifeq "$(FROM_OS):$(FROM_TAG)" "ubuntu:16.04"
-# Ubuntu 16.04 gets the default Ubuntu tag.
-PUSH_TAGS = $(TAG) $(RUBY_TAG)-ubuntu
+# Ubuntu 16.04 gets the default Ubuntu tag, the ubuntu alias, the default
+# VERSION alias, and the ruby-VERSION alias.
+PUSH_TAGS = $(TAG) $(RUBY_TAG) $(RUBY_TAG)-ubuntu  ruby-$(RUBY_TAG)
 endif
 
 ifeq "$(FROM_OS):$(FROM_TAG)" "debian:wheezy"
