@@ -17,7 +17,8 @@ RUN BUILD_DIR="/tmp/ruby-build" \
  && make \
  && make install \
  && cd / \
- && rm -r "$BUILD_DIR"
+ && rm -r "$BUILD_DIR" \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN gem install bundler
 
