@@ -20,6 +20,7 @@ RUN BUILD_DIR="/tmp/ruby-build" \
  && rm -r "$BUILD_DIR" \
  && rm -rf /var/lib/apt/lists/*
 
+RUN gem update --system
 RUN gem install bundler
 
 ADD test /tmp/test
