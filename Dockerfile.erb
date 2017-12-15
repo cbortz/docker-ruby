@@ -21,7 +21,7 @@ RUN BUILD_DIR="/tmp/ruby-build" \
  && rm -rf /var/lib/apt/lists/*
 
 RUN gem update --system
-RUN gem install bundler
+RUN gem install --force bundler
 
 ADD test /tmp/test
 RUN bats /tmp/test
