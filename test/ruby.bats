@@ -30,3 +30,7 @@
   # See http://blog.rubygems.org/2017/08/27/2.6.13-released.html
   ruby -e 'p Gem::Version.new(Gem::VERSION) >= Gem::Version.new("2.6.13")' | grep true
 }
+
+@test "It should install tzdata" {
+  dpkg -l tzdata
+}
