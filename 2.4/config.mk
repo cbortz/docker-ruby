@@ -1,2 +1,2 @@
-export RUBY_VERSION = 2.4.3
-export RUBY_SHA1SUM = 787b7f4e90fb4b39a61bc1a31eb7765f875a590c
+export RUBY_VERSION = 2.4.4
+export RUBY_SHA1SUM = ec82b0d53bd0adad9b19e6b45e44d54e9ec3f10c
