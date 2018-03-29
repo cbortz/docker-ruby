@@ -6,7 +6,7 @@ ENV RUBY_SHA1SUM <%= ENV.fetch('RUBY_SHA1SUM') %>
 RUN BUILD_DIR="/tmp/ruby-build" \
  && apt-get update \
  && apt-get -y install wget build-essential zlib1g-dev libssl-dev \
-    libreadline6-dev libyaml-dev \
+    libreadline6-dev libyaml-dev tzdata \
  && mkdir -p "$BUILD_DIR" \
  && cd "$BUILD_DIR" \
  && wget -q "http://cache.ruby-lang.org/pub/ruby/ruby-${RUBY_VERSION}.tar.gz" \
