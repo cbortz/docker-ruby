@@ -19,7 +19,7 @@ The Ruby programming language, on Docker.
 * `2.2-ubuntu-16.04`   (aliased as `2.2`):   Ruby 2.2.10
 * `2.3-ubuntu-16.04`   (aliased as `2.3`):   Ruby 2.3.8
 * `2.4-ubuntu-16.04`   (aliased as `2.4`):   Ruby 2.4.5
-* `2.5-ubuntu-16.04`   (aliased as `2.5`):   Ruby 2.5.2
+* `2.5-ubuntu-16.04`   (aliased as `2.5`):   Ruby 2.5.3
 
 As the name implies, those images are based on Ubuntu. You can use the Debian
 variants (which are slightly lighter) using the following tags:
