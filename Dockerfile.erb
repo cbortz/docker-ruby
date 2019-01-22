@@ -20,8 +20,9 @@ RUN BUILD_DIR="/tmp/ruby-build" \
  && rm -r "$BUILD_DIR" \
  && rm -rf /var/lib/apt/lists/*
 
-RUN gem update --system
-RUN gem install --force bundler
+RUN gem install "rubygems-update:~><%= ENV.fetch('RUBYGEMS_VERSION') %>" --no-ri --no-rdoc \
+ && update_rubygems
+RUN gem install "bundler:~><%= ENV.fetch('BUNDLER_VERSION') %>" --no-ri --no-rdoc --force
 
 ADD test /tmp/test
 RUN bats /tmp/test
