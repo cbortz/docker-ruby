@@ -33,7 +33,8 @@ RUN (gem install "rubygems-update:~><%= ENV['RUBYGEMS_VERSION'] %>" --no-ri --no
 <% else %>
 RUN gem update --system
 <% end %>
-RUN gem install "bundler:~><%= ENV.fetch('BUNDLER_VERSION') %>" --no-ri --no-rdoc --force
+#
+RUN gem install "bundler:~><%= ENV.fetch('BUNDLER_VERSION') %>" --no-document --force
 
 ADD test /tmp/test
 RUN bats /tmp/test
