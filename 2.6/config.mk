@@ -1,0 +1,6 @@
+export RUBY_VERSION = 2.6.0
+export RUBY_SHA1SUM = c95f4e86e21390270dad3ebb94491fd42ee2ce69
+export RUBY_SUBDIR = 2.6
+
+export RUBYGEMS_VERSION = 3.0.2
+export BUNDLER_VERSION = 2.0

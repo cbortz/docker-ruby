@@ -7,6 +7,7 @@ services:
 env:
   matrix:
     - RUBY_TAG=2.5 FROM_OS=ubuntu FROM_TAG=16.04
+    - RUBY_TAG=2.6 FROM_OS=ubuntu FROM_TAG=16.04
 
 script:
   - make build
