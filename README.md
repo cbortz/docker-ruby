@@ -1,19 +1,19 @@
 # docker-ruby
 
-<!-- [![Docker Repository on Quay.io](https://quay.io/repository/aptible/ruby/status)](https://quay.io/repository/aptible/ruby) -->
+[![Docker Repository on Quay.io](https://quay.io/repository/cbortz/ruby/status)](https://quay.io/repository/cbortz/ruby)
 [![Build Status](https://travis-ci.org/cbortz/docker-ruby.svg?branch=master)](https://travis-ci.org/cbortz/docker-ruby)
 
 The Ruby programming language, on Docker.
 
-<!-- ## Installation and Usage
+## Installation and Usage
 
-    docker pull quay.io/aptible/ruby
-    docker run quay.io/aptible/ruby [options] -->
+    docker pull quay.io/cbortz/ruby
+    docker run quay.io/cbortz/ruby [options]
 
 ## Available Tags
 
 * `latest`: Currently Ruby 2.5.3 (don't depend on this tag: it will change over time).
-* `2.5-ubuntu-16.04`   (aliased as `2.5`):   Ruby 2.5.3
+* `2.5-ubuntu-16.04`:   Ruby 2.5.3
 
 ## Tests
 
@@ -21,11 +21,11 @@ Tests are run as part of the `Dockerfile` build. To execute them separately with
 
     bats test
 
-<!-- ## Deployment
+## Deployment
 
 To push the Docker image to Quay, run the following command:
 
-    make release -->
+    make release
 
 ## Copyright and License
 
