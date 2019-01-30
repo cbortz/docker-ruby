@@ -1,5 +1,5 @@
 REGISTRY = quay.io
-REPOSITORY = aptible/ruby
+REPOSITORY = cbortz/ruby
 
 export TAG = $(RUBY_TAG)-$(FROM_OS)-$(FROM_TAG)
 export FROM = aptible/$(FROM_OS):$(FROM_TAG)
