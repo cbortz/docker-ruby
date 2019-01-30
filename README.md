@@ -13,8 +13,9 @@ The Ruby programming language, on Docker.
 ## Available Tags
 
 * `latest`: Currently Ruby 2.6.0 (don't depend on this tag: it will change over time).
-* `2.6-ubuntu-16.04`:   Ruby 2.6.0
-* `2.5-ubuntu-16.04`:   Ruby 2.5.3
+* `2.6-ubuntu-16.04`          :   Ruby 2.6.0
+* `2.6-jemalloc-ubuntu-16.04` :   Ruby 2.6.0 (configured with `jemalloc`)
+* `2.5-ubuntu-16.04`          :   Ruby 2.5.3
 
 ## Tests
 
