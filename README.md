@@ -1,7 +1,7 @@
 # docker-ruby
 
-<!-- [![Docker Repository on Quay.io](https://quay.io/repository/aptible/ruby/status)](https://quay.io/repository/aptible/ruby)
-[![Build Status](https://travis-ci.org/aptible/docker-ruby.svg?branch=master)](https://travis-ci.org/aptible/docker-ruby) -->
+<!-- [![Docker Repository on Quay.io](https://quay.io/repository/aptible/ruby/status)](https://quay.io/repository/aptible/ruby) -->
+[![Build Status](https://travis-ci.org/cbortz/docker-ruby.svg?branch=master)](https://travis-ci.org/cbortz/docker-ruby)
 
 The Ruby programming language, on Docker.
 
