@@ -1,4 +1,0 @@
-export RUBY_VERSION = 2.3.8
-export RUBY_SHA1SUM = 69311991a9cd2c8e3c86a0dbbaaf915ae91f0bec
-
-export BUNDLER_VERSION = 2.0
