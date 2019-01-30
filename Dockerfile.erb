@@ -1,7 +1,8 @@
-FROM quay.io/<%= ENV.fetch('FROM') %>
+FROM quay.io/<%= ENV.fetch("FROM") %>
+LABEL maintainer="Chet Bortz <chet@bortz.co>"
 
-ENV RUBY_VERSION <%= ENV.fetch('RUBY_VERSION') %>
-ENV RUBY_SHA1SUM <%= ENV.fetch('RUBY_SHA1SUM') %>
+ENV RUBY_VERSION <%= ENV.fetch("RUBY_VERSION") %>
+ENV RUBY_SHA1SUM <%= ENV.fetch("RUBY_SHA1SUM") %>
 
 RUN BUILD_DIR="/tmp/ruby-build" \
  && apt-get update \
@@ -20,21 +21,15 @@ RUN BUILD_DIR="/tmp/ruby-build" \
  && rm -r "$BUILD_DIR" \
  && rm -rf /var/lib/apt/lists/*
 
-# There are 3 cases we need to accommodate here:
-# * On Ruby >= 2.3, update_rubygems no longer works, so we run `gem update --system`
-# * On Ruby >= 2.0.0 but < 2.3, we can use a pessimistic ~> operator on gem install,
-#   to install the latest patch version of a common minor version
-# * On Ruby 1.9.3, the pessimistic operator isn't supported by the default gem,
-#   so we must gem install a specific version
-<% if ENV['RUBYGEMS_VERSION'] %>
-RUN (gem install "rubygems-update:~><%= ENV['RUBYGEMS_VERSION'] %>" --no-ri --no-rdoc || \
-     gem install rubygems-update --version=<%= ENV['RUBYGEMS_VERSION'] %> --no-ri --no-rdoc) && \
+<% if ENV["RUBYGEMS_VERSION"] %>
+RUN (gem install "rubygems-update:~><%= ENV["RUBYGEMS_VERSION"] %>" --no-ri --no-rdoc || \
+     gem install rubygems-update --version=<%= ENV["RUBYGEMS_VERSION"] %> --no-ri --no-rdoc) && \
       update_rubygems
 <% else %>
 RUN gem update --system
 <% end %>
 #
-RUN gem install "bundler:~><%= ENV.fetch('BUNDLER_VERSION') %>" --no-document --force
+RUN gem install "bundler:~><%= ENV.fetch("BUNDLER_VERSION") %>" --no-document --force
 
 ADD test /tmp/test
 RUN bats /tmp/test
