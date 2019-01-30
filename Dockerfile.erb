@@ -3,6 +3,7 @@ LABEL maintainer="Chet Bortz <chet@bortz.co>"
 
 ENV RUBY_VERSION <%= ENV.fetch("RUBY_VERSION") %>
 ENV RUBY_SHA1SUM <%= ENV.fetch("RUBY_SHA1SUM") %>
+ENV RUBY_SUBDIR <%= ENV.fetch("RUBY_SUBDIR") %>
 
 RUN BUILD_DIR="/tmp/ruby-build" \
  && apt-get update \
@@ -10,7 +11,7 @@ RUN BUILD_DIR="/tmp/ruby-build" \
     libreadline6-dev libyaml-dev tzdata \
  && mkdir -p "$BUILD_DIR" \
  && cd "$BUILD_DIR" \
- && wget -q "http://cache.ruby-lang.org/pub/ruby/ruby-${RUBY_VERSION}.tar.gz" \
+ && wget -q "http://cache.ruby-lang.org/pub/ruby/${RUBY_SUBDIR}/ruby-${RUBY_VERSION}.tar.gz" \
  && echo "${RUBY_SHA1SUM}  ruby-${RUBY_VERSION}.tar.gz" | sha1sum -c - \
  && tar xzf "ruby-${RUBY_VERSION}.tar.gz" \
  && cd "ruby-${RUBY_VERSION}" \
