@@ -2,7 +2,7 @@ REGISTRY = quay.io
 REPOSITORY = cbortz/ruby
 
 export TAG = $(RUBY_TAG)-$(FROM_OS)-$(FROM_TAG)
-export FROM = aptible/$(FROM_OS):$(FROM_TAG)
+export FROM = cbortz/$(FROM_OS):$(FROM_TAG)
 
 # Now, we have to figure out aliases.
 PUSH_TAGS = $(TAG) ruby-$(TAG)
