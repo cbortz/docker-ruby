@@ -12,13 +12,13 @@ The Ruby programming language, on Docker.
 
 ## Available Tags
 
-* `latest`: Currently Ruby 2.6.0 (don't depend on this tag: it will change over time).
-* `2.6-ubuntu-16.04`          :   Ruby 2.6.0
+* `latest`: Currently Ruby 2.6.1 (don't depend on this tag: it will change over time).
+* `2.6-ubuntu-16.04`          :   Ruby 2.6.1
 * `2.5-ubuntu-16.04`          :   Ruby 2.5.3
 
 These tags above are built using the default `glibc` malloc. To use `jemalloc` instead, select one of the following tags:
 
-* `2.6-jemalloc-ubuntu-16.04` :   Ruby 2.6.0 (configured with `jemalloc`)
+* `2.6-jemalloc-ubuntu-16.04` :   Ruby 2.6.1 (configured with `jemalloc`)
 * `2.5-jemalloc-ubuntu-16.04` :   Ruby 2.5.3 (configured with `jemalloc`)
 
 
